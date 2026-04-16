@@ -1,5 +1,5 @@
 @font-face {
-	font-family: American Typewriter Light;
+	font-family: "American Typewriter", serif;
 	src: url("/System/Library/Fonts/Supplemental/AmericanTypewriter.ttc")
 }
 * {
@@ -16,7 +16,6 @@ body {
 	justify-content: center;
 	padding: 20px;
 }
-
 .container {
 	background-color: #FDFBCF;
 	border-radius: 1rem;
@@ -24,4 +23,84 @@ body {
 	width: 100%;
 	max-width: 800px;
 	box-shadow: 0 10px 25px #000000;
+}
+h1 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	color: #333;
+	position: relative;
+	padding-bottom: 0.5rem;
+}
+h1::after {
+	content:"";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 3px;
+	background-color: #F7C319;
+	border-radius: 2px;
+}
+#generateButton {
+	background: linear-gradient(135deg, #FDEB9E, #F7C319);
+	color: #333;
+	border: none;
+	padding: 0.8rem 1.5rem;
+	border-radius: 50px;
+	cursor: pointer;
+	font-weight: 500;
+	margin-bottom: 2rem;
+	font-size: 1rem;
+}
+#generateButton:hover {
+	transform: translateX(1px);
+	box-shadow: 0 6px 10px #FDEB9E;
+}
+#generateButton:active {
+	transform: translateX(0px);
+}
+.paletteContainer {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+.colorBox {
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 3px 10px #333;
+	transition: transform 0.2s;
+}
+.colorBox:hover {
+	transform:translateY(-5px);
+}
+.color {
+	height: 120px;
+	cursor: pointer;
+}
+.colorInfo {
+	background-color: #FDFBCF;
+	padding: 0.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 0.9rem;
+}
+.hexValue {
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+.copyButton {
+	cursor: pointer;
+	color: #C0C0C0;
+	transition: color 0.2s;
+}
+.copyButton:hover {
+	color: #63666A;
+}
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1024px) {
+}
+@media only screen and (max-width: 600px) {
 }
